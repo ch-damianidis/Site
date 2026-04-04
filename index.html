@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Charis Damianidis | PhD Candidate</title>
+  <style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    background: #f7f7f5;
+    color: #1f2937;
+    line-height: 1.6;
+  }
+
+  header {
+    background: white;
+    padding: 24px 40px;
+    border-bottom: 1px solid #e5e7eb;
+    position: sticky;
+    top: 0;
+  }
+
+  nav {
+    display: flex;
+    gap: 24px;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: #1f2937;
+    font-weight: bold;
+  }
+
+  .hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 40px;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+
+  .hero-text {
+    flex: 1;
+    min-width: 280px;
+  }
+
+  .hero-text h1 {
+    font-size: 42px;
+    margin-bottom: 12px;
+  }
+
+  .hero-text h2 {
+    font-size: 20px;
+    color: #4b5563;
+    margin-bottom: 20px;
+    font-weight: normal;
+  }
+
+  .hero-text p {
+    max-width: 600px;
+    margin-bottom: 20px;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .buttons a {
+    text-decoration: none;
+    background: #111827;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-weight: bold;
+  }
+
+  .hero-side {
+    width: 320px;
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    text-align: center;
+  }
+
+  .hero-side h3 {
+    margin-bottom: 16px;
+  }
+
+  .hero-side a {
+    display: block;
+    margin: 10px 0;
+    color: #2563eb;
+    text-decoration: none;
+  }
+
+  .network-wrap {
+    margin: 24px auto 0;
+    width: 180px;
+    height: 180px;
+    position: relative;
+  }
+
+  .network {
+    width: 180px;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: spin 22s linear infinite;
+  }
+
+  .edge {
+    stroke: #111111;
+    stroke-width: 2;
+  }
+
+  .net-node {
+    fill: #b91c1c;
+    stroke: #111111;
+    stroke-width: 1.5;
+  }
+
+  .math-bg {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .math-bg span {
+    position: absolute;
+    color: rgba(0, 0, 0, 0.06);
+    font-size: 20px;
+    font-family: "Times New Roman", serif;
+    white-space: nowrap;
+    animation: floatMath 24s linear infinite;
+  }
+
+  .math-bg span:nth-child(1)  { top: 8%; left: 8%; animation-duration: 30s; }
+  .math-bg span:nth-child(2)  { top: 18%; left: 62%; animation-duration: 34s; }
+  .math-bg span:nth-child(3)  { top: 34%; left: 12%; animation-duration: 28s; }
+  .math-bg span:nth-child(4)  { top: 42%; left: 70%; animation-duration: 26s; }
+  .math-bg span:nth-child(5)  { top: 56%; left: 18%; animation-duration: 32s; }
+  .math-bg span:nth-child(6)  { top: 66%; left: 72%; animation-duration: 29s; }
+  .math-bg span:nth-child(7)  { top: 78%; left: 10%; animation-duration: 35s; }
+  .math-bg span:nth-child(8)  { top: 82%; left: 58%; animation-duration: 27s; }
+  .math-bg span:nth-child(9)  { top: 24%; left: 38%; animation-duration: 33s; }
+  .math-bg span:nth-child(10) { top: 72%; left: 40%; animation-duration: 31s; }
+
+  header,
+  main,
+  footer {
+    position: relative;
+    z-index: 1;
+  }
+
+  section {
+    padding: 50px 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+  }
+
+  .card {
+    background: white;
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  }
+
+  footer {
+    text-align: center;
+    padding: 30px;
+    color: #6b7280;
+  }
+
+  .email-toggle {
+    display: block;
+    margin: 10px 0;
+    color: #2563eb;
+    cursor: pointer;
+  }
+
+  .email-toggle:hover,
+  .hero-side a:hover {
+    text-decoration: underline;
+  }
+
+  .hidden-email {
+    display: none;
+    color: #2563eb;
+    margin: 6px 0 10px 0;
+    word-break: break-word;
+  }
+
+  .right-column {
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .cv-card p {
+    margin-bottom: 12px;
+  }
+
+  @keyframes floatMath {
+    0%   { transform: translateY(0px) rotate(0deg); }
+    50%  { transform: translateY(-18px) rotate(2deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+  }
+
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+</style>
+</head>
+<body>
+
+<div class="math-bg" aria-hidden="true">
+  <span>y ∼ N(μ, σ²)</span>
+  <span>f(x) = 1 / √(2πσ²) · e^(-(x-μ)² / 2σ²)</span>
+  <span>β̂ = (X'X)^(-1)X'y</span>
+  <span>π(θ | y)</span>
+  <span>SE(θ̂)</span>
+  <span>x̄ , s²</span>
+  <span>Φ(z)</span>
+  <span>H₀ : μ₁ = μ₂</span>
+  <span>logit(p)</span>
+  <span>τ²</span>
+</div>
+  <header>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#news">Announcements</a>
+      <a href="#projects">Projects</a>
+      <a href="#teaching">Academic Teaching Experience</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-text">
+        <h1>Charis Damianidis</h1>
+        <h2>Biostatistician | Evidence Synthesis | Health Data Analytics</h2>
+        <p>
+  Hello, my name is Charis Damianidis. I am a PhD candidate in Statistical Meta-Analysis Models at the University of Ioannina.
+  My specific research interests include publication bias, Bayesian meta-analysis, and hierarchical modeling.
+  I would be pleased to discuss new ideas and collaborate on projects related to these topics.
+  Please feel free to contact me via email or connect with me on LinkedIn.
+</p>
+
+        <div class="buttons">
+          <a href="#projects">View Projects</a>
+          <a href="#teaching">View Academic Teaching Experience</a>
+        </div>
+      </div>
+
+      <div class="right-column">
+  <aside class="hero-side">
+    <h3>You can also find me on</h3>
+
+    <a href="https://www.linkedin.com/in/charis-damianidis" target="_blank">LinkedIn</a>
+    <a href="https://github.com/ch-damianidis" target="_blank">GitHub</a>
+
+    <p class="email-toggle" onclick="toggleEmail()">Email</p>
+    <p id="emailText" class="hidden-email">charalampos.damianidis@gmail.com</p>
+
+    <div class="network-wrap">
+  <div class="network">
+    <svg viewBox="0 0 200 200" width="180" height="180" aria-hidden="true">
+      <line x1="40" y1="50" x2="95" y2="35" class="edge"></line>
+      <line x1="95" y1="35" x2="150" y2="60" class="edge"></line>
+      <line x1="150" y1="60" x2="135" y2="125" class="edge"></line>
+      <line x1="135" y1="125" x2="75" y2="155" class="edge"></line>
+      <line x1="75" y1="155" x2="35" y2="110" class="edge"></line>
+      <line x1="35" y1="110" x2="40" y2="50" class="edge"></line>
+      <line x1="40" y1="50" x2="135" y2="125" class="edge"></line>
+      <line x1="95" y1="35" x2="75" y2="155" class="edge"></line>
+      <line x1="35" y1="110" x2="150" y2="60" class="edge"></line>
+
+      <circle cx="40" cy="50" r="7" class="net-node"></circle>
+      <circle cx="95" cy="35" r="7" class="net-node"></circle>
+      <circle cx="150" cy="60" r="7" class="net-node"></circle>
+      <circle cx="135" cy="125" r="7" class="net-node"></circle>
+      <circle cx="75" cy="155" r="7" class="net-node"></circle>
+      <circle cx="35" cy="110" r="7" class="net-node"></circle>
+    </svg>
+  </div>
+</div>
+  </aside>
+
+  <div class="hero-side cv-card">
+    <h3>Curriculum Vitae</h3>
+    <p>Download a short version of my CV here.</p>
+    <a href="Charis_Damianidis_CV.pdf" target="_blank">Open CV PDF</a>
+  </div>
+</div>
+</section>
+
+
+   
+
+    <section id="news">
+      <h2>Announcements</h2>
+      <div class="card-grid">
+        <div class="card">
+          <h3>March 2026</h3>
+          <p>Started building my personal academic website.</p>
+        </div>
+        <div class="card">
+          <h3>Upcoming</h3>
+          <p>More research updates, projects, and academic news will be posted here.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+  <h2>Projects</h2>
+  <div class="card">
+    <h3>Master’s Thesis – Development of a Shiny Tool for Living Network Meta-Analysis</h3>
+    <p>
+      My master’s thesis, completed in the MSc program in Health Statistics and Data Analytics
+      at the School of Medicine, Aristotle University of Thessaloniki, focuses on the development
+      of an R Shiny application for Living Network Meta-Analysis, with a demonstration in chronic
+      lymphocytic leukemia (CLL). The tool supports standard NMA and Component NMA workflows,
+      including node merging, data exploration, model fitting, diagnostic assessment, visualization
+      of key outputs, and export of structured HTML reports.
+    </p>
+    <a href="https://github.com/ch-damianidis/lsr" target="_blank">View project on GitHub</a>
+  </div>
+</section>
+
+   <section id="teaching">
+  <h2>Academic Teaching Experience</h2>
+  <div class="card-grid">
+    <div class="card">
+      <h3>Laboratory Instructor – Medical Statistics</h3>
+      <p><strong>Aristotle University of Thessaloniki | October 2025 – February 2026</strong></p>
+      <p>
+        Served as Laboratory Instructor for the Medical Statistics course for undergraduate
+        medical students at the Aristotle University of Thessaloniki. I was responsible for
+        delivering the practical component of the course, guiding students in the use of Jamovi
+        for data management, descriptive statistics, and interpretation of statistical results.
+        The laboratory sessions covered core biostatistical methods, including t-tests, ANOVA,
+        and analyses of categorical data, with emphasis on the practical application of
+        statistical concepts to real medical datasets. I also designed and delivered exercises
+        aligned with the theoretical material of the course, supporting students in developing
+        both methodological understanding and confidence in statistical reasoning.
+      </p>
+    </div>
+  </div>
+</section>
+  </main>
+
+  <footer>
+    <p>© 2026 Charis Damianidis</p>
+  </footer>
+
+
+  <script>
+  function toggleEmail() {
+    const email = document.getElementById("emailText");
+
+    if (email.style.display === "block") {
+      email.style.display = "none";
+    } else {
+      email.style.display = "block";
+    }
+  }
+</script>
+</body>
+</html>
