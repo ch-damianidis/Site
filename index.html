@@ -225,6 +225,85 @@
     margin-bottom: 12px;
   }
 
+  .latest-announcement {
+  background: white;
+  padding: 28px 32px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  border-left: 6px solid #0f3d63;
+  max-width: 850px;
+}
+
+.latest-announcement h3 {
+  color: #0f3d63;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.latest-announcement p {
+  margin-bottom: 14px;
+}
+
+.announcement-label {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #6b7280;
+  margin-bottom: 8px;
+}
+
+.announcement-date {
+  font-weight: bold;
+  color: #1f2937;
+}
+
+.announcement-actions {
+  margin-top: 18px;
+}
+
+.announcement-actions a {
+  display: inline-block;
+  text-decoration: none;
+  background: #111827;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.announcement-actions a:hover {
+  background: #374151;
+}
+
+.view-more-btn {
+  margin-top: 22px;
+  background: transparent;
+  border: 1px solid #111827;
+  color: #111827;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.view-more-btn:hover {
+  background: #111827;
+  color: white;
+}
+
+.more-announcements {
+  display: none;
+  margin-top: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.more-announcements.show {
+  display: grid;
+}
+
   @keyframes floatMath {
     0%   { transform: translateY(0px) rotate(0deg); }
     50%  { transform: translateY(-18px) rotate(2deg); }
@@ -326,18 +405,53 @@
    
 
     <section id="news">
-      <h2>Announcements</h2>
-      <div class="card-grid">
-        <div class="card">
-          <h3>March 2026</h3>
-          <p>Started building my personal academic website.</p>
-        </div>
-        <div class="card">
-          <h3>Upcoming</h3>
-          <p>More research updates, projects, and academic news will be posted here.</p>
-        </div>
-      </div>
-    </section>
+  <h2>Announcements</h2>
+
+  <div class="latest-announcement">
+    <p class="announcement-label">Latest announcement</p>
+
+    <h3>Summer School: Introduction to Meta-Analysis and Network Meta-Analysis</h3>
+
+    <p class="announcement-date">
+      11–12 July 2026 | K.E.DI.VI.M., University of Ioannina
+    </p>
+
+    <p>
+      I am pleased to announce the upcoming in-person summer school
+      <em>“Introduction to Meta-Analysis and Network Meta-Analysis”</em>,
+      organized by the Evidence Synthesis Methods Team at the University of Ioannina.
+    </p>
+
+    <p>
+      The seminar will introduce participants to systematic review and meta-analysis,
+      effect sizes, fixed and random effects models, heterogeneity, subgroup analysis,
+      meta-regression, publication bias, network meta-analysis, and hands-on sessions
+      in R and CINeMA.
+    </p>
+
+    <div class="announcement-actions">
+      <a href="assets/afisa.pdf" target="_blank">View seminar poster</a>
+    </div>
+  </div>
+
+  <button class="view-more-btn" onclick="toggleAnnouncements()" id="viewMoreBtn">
+    View more
+  </button>
+
+  <div class="more-announcements" id="moreAnnouncements">
+
+    <div class="card">
+      <h3>March 2026</h3>
+      <p>Started building my personal academic website.</p>
+    </div>
+
+    <div class="card">
+      <h3>Upcoming</h3>
+      <p>More research updates, projects, and academic news will be posted here.</p>
+    </div>
+
+  </div>
+</section>
 
     <section id="projects">
   <h2>Projects</h2>
@@ -392,6 +506,20 @@
       email.style.display = "block";
     }
   }
+
+  function toggleAnnouncements() {
+    const moreAnnouncements = document.getElementById("moreAnnouncements");
+    const button = document.getElementById("viewMoreBtn");
+
+    moreAnnouncements.classList.toggle("show");
+
+    if (moreAnnouncements.classList.contains("show")) {
+      button.textContent = "View less";
+    } else {
+      button.textContent = "View more";
+    }
+  }
 </script>
 </body>
 </html>
+
