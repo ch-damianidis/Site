@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Charis Damianidis | PhD Student</title>
+  <title>Charis Damianidis | PhD Candidate</title>
   <style>
   * {
     box-sizing: border-box;
@@ -188,6 +188,18 @@
     border-radius: 14px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
   }
+  
+  .card a {
+    display: inline-block;
+    margin-top: 15px;
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .card a:hover {
+    text-decoration: underline;
+  }
 
   footer {
     text-align: center;
@@ -345,7 +357,7 @@
         <h1>Charis Damianidis</h1>
         <h2>Biostatistician | Evidence Synthesis | Health Data Analytics</h2>
         <p>
-  Hello, my name is Charis Damianidis. I am a PhD Student in Statistical Models in Meta-Analysis at the University of Ioannina
+  Hello, my name is Charis Damianidis. I am a PhD Candidate in Causal Inference Methods in Meta-Analysis at the University of Ioannina
   and a Research Associate in the Evidence Synthesis Methods Team.
   My research interests focus on statistical methods for evidence synthesis, with particular emphasis on individual participant data meta-analysis, 
   causal inference, treatment-effect heterogeneity, and health data analytics.
@@ -365,6 +377,7 @@
 
     <a href="https://www.linkedin.com/in/charis-damianidis" target="_blank">LinkedIn</a>
     <a href="https://github.com/ch-damianidis" target="_blank">GitHub</a>
+
 
     <p class="email-toggle" onclick="toggleEmail()">Email</p>
     <p id="emailText" class="hidden-email">charalampos.damianidis@gmail.com</p>
@@ -396,19 +409,19 @@
   <div class="hero-side cv-card">
     <h3>Curriculum Vitae</h3>
     <p>Download a short version of my CV here.</p>
-    <a href="Charis_Damianidis_CV.pdf" target="_blank">Open CV PDF</a>
+    <a href="CV.pdf" target="_blank">Open CV PDF</a>
   </div>
 </div>
 </section>
 
 
-   
+    
 
     <section id="news">
   <h2>Announcements</h2>
 
   <div class="latest-announcement">
-    <p class="announcement-label">Latest announcement</p>
+    <p class="announcement-label">Past Event</p>
 
     <h3>Summer School: Introduction to Meta-Analysis and Network Meta-Analysis</h3>
 
@@ -417,13 +430,13 @@
     </p>
 
     <p>
-      I am pleased to announce the upcoming in-person summer school
+      I served as an instructor for the in-person summer school
       <em>“Introduction to Meta-Analysis and Network Meta-Analysis”</em>,
       organized by the Evidence Synthesis Methods Team at the University of Ioannina.
     </p>
 
     <p>
-      The seminar will introduce participants to systematic review and meta-analysis,
+      The seminar introduced participants to systematic review and meta-analysis,
       effect sizes, fixed and random effects models, heterogeneity, subgroup analysis,
       meta-regression, publication bias, network meta-analysis, and hands-on sessions
       in R and CINeMA.
@@ -453,19 +466,31 @@
   </div>
 </section>
 
-    <section id="projects">
+<section id="projects">
   <h2>Projects</h2>
-  <div class="card">
-    <h3>Master’s Thesis – Development of a Shiny Tool for Living Network Meta-Analysis</h3>
-    <p>
-      My master’s thesis, completed in the MSc program in Health Statistics and Data Analytics
-      at the School of Medicine, Aristotle University of Thessaloniki, focuses on the development
-      of an R Shiny application for Living Network Meta-Analysis, with a demonstration in chronic
-      lymphocytic leukemia (CLL). The tool supports standard NMA and Component NMA workflows,
-      including node merging, data exploration, model fitting, diagnostic assessment, visualization
-      of key outputs, and export of structured HTML reports.
-    </p>
-    <a href="https://github.com/ch-damianidis/lsr" target="_blank">View project on GitHub</a>
+  <div class="card-grid">
+    <div class="card">
+      <h3>Master’s Thesis – Development of a Shiny Tool for Living Network Meta-Analysis</h3>
+      <p>
+        My master’s thesis, completed in the MSc program in Health Statistics and Data Analytics
+        at the School of Medicine, Aristotle University of Thessaloniki, focuses on the development
+        of an R Shiny application for Living Network Meta-Analysis, with a demonstration in chronic
+        lymphocytic leukemia (CLL). The tool supports standard NMA and Component NMA workflows,
+        including node merging, data exploration, model fitting, diagnostic assessment, visualization
+        of key outputs, and export of structured HTML reports.
+      </p>
+      <a href="https://github.com/ch-damianidis/lsr" target="_blank">View project on GitHub</a>
+    </div>
+
+    <div class="card">
+      <h3>Living NMA/CNMA Research Website</h3>
+      <p>
+        Architected a reproducible, transparent Quarto website deployed via GitHub Pages. 
+        It enables serverless, in-browser interactivity for node-merging and analysis without 
+        a backend server, utilizing WebAssembly (webR).
+      </p>
+      <a href="https://ch-damianidis.github.io/living-nma-cnma-tool/" target="_blank">View Live Site</a>
+    </div>
   </div>
 </section>
 
@@ -522,4 +547,3 @@
 </script>
 </body>
 </html>
-
